@@ -37,20 +37,24 @@
         const imc = peso / (altura * altura);
         let classificacao = "";
         
-        if (imc < 18.5){
-            classificacao = "Você está abaixo do peso";
+        if (imc < 16){
+            classificacao = "Você está com magreza grau 3";
+        }else if (imc < 17){
+            classificacao = "Você está com magreza grau 2";
+        }else if (imc < 18.5){
+            classificacao = "Você está com magreza grau 1";
         }else if (imc < 25){
-            classificacao = "Você está peso ideal";
+            classificacao = "Você está com eutrofia";
         }else if (imc < 30) {
-           classificacao = "Você está com sobrepeso";
+           classificacao = "Você está com pré-obesidade";
         }else if  (imc < 35){
-           classificacao = "Você está obesidade grau 1";
+           classificacao = "Você está obesidade moderada 1";
         }else if (imc < 40) {
-           classificacao = "Você está obesidade grau 2";
+           classificacao = "Você está com obesidade severa 2";
         }else {
-           classificacao = "Você está obesidade grau 3";
+           classificacao = "Você está com obesidade muito severa 3";
         }
 
-        resultado.innerHTML = `Seu IMC é <strog>${imc.toFixed(2)} </strog> kg/m². <br>${classificacao}`;
+        resultado.innerHTML = `Seu IMC é <strong>${imc.toFixed(2)} </strong> kg/m². <br>${classificacao}`;
         resultado.style.color = "green"
     }

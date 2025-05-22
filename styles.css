@@ -11,6 +11,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  padding: 20px;
 }
 
 .container {
@@ -27,6 +28,17 @@ h1 {
   margin-bottom: 15px;
 }
 
+
+
+.img-responsiva{
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+
+/* Form */
 form {
   display: flex;
   flex-direction: column;
@@ -62,4 +74,31 @@ button:hover {
   margin-top: 10px;
   font-size: 10px;
   text-align: center;
+}
+
+
+
+/* responsividade */
+@media (min-width: 768px) {
+  .container{
+    padding: 40px;
+    
+  }
+  input, button{
+    font-size: 50px;
+    padding: 10px;
+  }
+    h1 {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 360px) {
+  h1 {
+    font-size: 20px;
+  }
+  input, button{
+    font-size: 22px;
+    padding: 10px;
+  }
 }
