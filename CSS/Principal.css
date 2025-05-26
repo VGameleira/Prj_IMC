@@ -40,14 +40,16 @@ body {
   min-height: 100vh;
 }
 
-
+.magreza{
+ background-color: #cf7862;
+}
 
 .baixo-peso {
 
- background-color: #ffeb3b;
+ background-color: #ffe600;
 }
 
-.normal {
+.ideal {
 
  background-color: #8bc34a;
 
@@ -55,16 +57,23 @@ body {
 
 .sobrepeso {
 
- background-color: #ff9800;
+ background-color: #ffe600;
 
 }
 
-.obesidade {
+.obesidade1 {
 
- background-color: #f44336;
+ background-color: #cf7862;
 
  color: white;
 
+}
+.obesidade2 {
+  background-color: #ff0000;
+}
+
+.obesidade3 {
+  background-color: #6b0101;
 }
 
 /* === Cabeçalho === */
