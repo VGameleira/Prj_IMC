@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de IMC Infantil</title>
+  <link rel="stylesheet" href="/CSS/infantil.css">
+
+  <script src="/JS/imcInfantil.js"></script>
+   <script src="/JS/darkMode.js"></script>
+  <script src="/JS/animacao.js"></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <h1><a href="Principal.html">Calculadora IMC</a></h1>
+    
+    <nav>
+      <ul class="nav-links">
+        <li><a href="Infantil.html">IMC Infantil</a></li>
+        <li><a href="Tabelas.html">Tabelas IMC</a></li>
+        <li><a href="calculadora-iac.html">Calculadora IAC</a></li>
+        <li><a href="Duvidas.html">Dúvidas sobre IMC</a></li>
+      </ul>
+    </nav>
+    <button id="modoDark" class="btn-tema">🌙</button>
+
+  </header>
+
+  <main class="container">
+    <section class="formulario">
+      <h2>Calculadora de IMC Infantil</h2>
+      <form onsubmit="calcularIMCInfantil(); return false;">
+        <label for="pesoInfantil">Peso (kg):</label>
+        <input type="number" id="pesoInfantil" step="0.1" placeholder="Ex: 32.5">
+
+        <label for="alturaInfantil">Altura (m):</label>
+        <input type="number" id="alturaInfantil" step="0.01" placeholder="Ex: 1.35">
+
+        <label for="idade">Idade (6 a 15 anos):</label>
+        <input type="number" id="idade" min="6" max="15" placeholder="Ex: 10">
+
+        <label for="sexo">Sexo:</label>
+        <select id="sexo">
+          <option value="masculino">Masculino</option>
+          <option value="feminino">Feminino</option>
+        </select>
+
+        <button type="submit">Calcular IMC Infantil</button>
+      </form>
+
+      <div id="resultadoIMCInfantil"></div>
+      <div id="dicasSaudeInfantil" style="display: none;">
+        <strong>Dica de Saúde:</strong>
+        <p id="mensagemSaudeInfantil"></p>
+      </div>
+    </section>
+
+    <section class="tabelas">
+
+      <img src="/Imagens/imc-infantil.jpg" alt="Tabela IMC Infantil" class="imagem-tabela">
+      <h3>IMC Infantil - Meninos</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Idade</th>
+            <th>Normal</th>
+            <th>Sobrepeso</th>
+            <th>Obesidade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>6</td>
+            <td>14,5</td>
+            <td>mais de 16,6</td>
+            <td>mais de 18,0</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>15</td>
+            <td>mais de 17,3</td>
+            <td>mais de 19,1</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>15,6</td>
+            <td>mais de 16,7</td>
+            <td>mais de 20,3</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>16,1</td>
+            <td>mais de 18,8</td>
+            <td>mais de 21,4</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>16,7</td>
+            <td>mais de 19,6</td>
+            <td>mais de 22,5</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>17,2</td>
+            <td>mais de 20,3</td>
+            <td>mais de 23,7</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>17,8</td>
+            <td>mais de 21,1</td>
+            <td>mais de 24,8</td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td>18,5</td>
+            <td>mais de 21,9</td>
+            <td>mais de 25,9</td>
+          </tr>
+          <tr>
+            <td>14</td>
+            <td>19,2</td>
+            <td>mais de 22,7</td>
+            <td>mais de 26,9</td>
+          </tr>
+          <tr>
+            <td>15</td>
+            <td>19,9</td>
+            <td>mais de 23,6</td>
+            <td>mais de 27,7</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>IMC Infantil - Meninas</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Idade</th>
+            <th>Normal</th>
+            <th>Sobrepeso</th>
+            <th>Obesidade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>6</td>
+            <td>14,3</td>
+            <td>mais de 16,1</td>
+            <td>mais de 17,4</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>14,9</td>
+            <td>mais de 17,1</td>
+            <td>mais de 18,9</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>15,6</td>
+            <td>mais de 18,1</td>
+            <td>mais de 20,3</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>16,3</td>
+            <td>mais de 19,1</td>
+            <td>mais de 21,7</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>17</td>
+            <td>mais de 20,1</td>
+            <td>mais de 23,2</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>17,6</td>
+            <td>mais de 21,1</td>
+            <td>mais de 24,5</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>18,3</td>
+            <td>mais de 22,1</td>
+            <td>mais de 25,9</td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td>18,9</td>
+            <td>mais de 23</td>
+            <td>mais de 27,7</td>
+          </tr>
+          <tr>
+            <td>14</td>
+            <td>19,3</td>
+            <td>mais de 23,8</td>
+            <td>mais de 27,9</td>
+          </tr>
+          <tr>
+            <td>15</td>
+            <td>19,6</td>
+            <td>mais de 24,2</td>
+            <td>mais de 28,8</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Calculadora de IMC Infantil</p>
+  </footer>
+</body>
+
+</html>

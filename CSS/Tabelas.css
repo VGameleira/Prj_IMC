@@ -1,0 +1,121 @@
+/* === Estilos para Classificações de IMC === */
+.baixo-peso {
+    background-color: #ffeb3b;
+}
+
+.normal {
+    background-color: #8bc34a;
+}
+
+.sobrepeso {
+    background-color: #ff9800;
+}
+
+.obesidade {
+    background-color: #f44336;
+    color: white;
+}
+
+/* === Layout Geral === */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 2rem;
+    background: white;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+/* === Cabeçalho === */
+.site-header {
+    background-color: #0077cc;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.site-header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+/* === Navegação === */
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    background-color: #005fa3;
+}
+
+/* === Tipografia === */
+h2 {
+    color: #0077cc;
+    margin-top: 1.5rem;
+}
+
+h3 {
+    color: #005a99;
+    margin-top: 1rem;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 2rem;
+}
+
+/* === Tabela === */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.5rem;
+}
+
+table,
+th,
+td {
+    border: 1px solid #ccc;
+}
+
+th,
+td {
+    padding: 0.5rem;
+    text-align: center;
+}
+
+/* === Rodapé === */
+footer {
+    text-align: center;
+    background: #0077cc;
+    color: white;
+    padding: 1rem;
+    margin-top: 2rem;
+}

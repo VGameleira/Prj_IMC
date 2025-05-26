@@ -1,0 +1,231 @@
+/* === Reset básico === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* === Base === */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #e0f7f4;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* === Cabeçalho === */
+.site-header {
+  background-color: #2a9d8f;
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.site-header h1 a {
+  color: white;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+/* === Navegação === */
+.nav-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.nav-links li a {
+  background-color: #21867a;
+  color: white;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  background-color: #17695e;
+}
+
+/* === Container principal === */
+.container {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* === Formulários === */
+.formulario h2 {
+  margin-bottom: 1rem;
+  color: #2a9d8f;
+  font-size: 1.8rem;
+}
+
+label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  margin-top: 1.5rem;
+  padding: 0.6rem 1.2rem;
+  background-color: #2a9d8f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #21867a;
+}
+
+#resultadoIMCInfantil {
+  margin-top: 1rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+#dicasSaudeInfantil {
+  margin-top: 1rem;
+  background-color: #d1f5ee;
+  padding: 1rem;
+  border-left: 5px solid #2a9d8f;
+  border-radius: 5px;
+}
+
+/* === Tabelas === */
+.tabelas h3 {
+  margin-top: 2rem;
+  color: #2a9d8f;
+  border-bottom: 2px solid #2a9d8f;
+  padding-bottom: 0.4rem;
+  font-size: 1.5rem;
+}
+
+.imagem-tabela {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: #fff;
+}
+
+thead {
+  background-color: #2a9d8f;
+  color: white;
+}
+
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 0.8rem;
+  text-align: center;
+}
+
+/* === Rodapé === */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #2a9d8f;
+  color: white;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  border-top: 1px solid #21867a;
+}
+
+
+/* === Botão de Modo Escuro === */
+.dark-mode-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: #17695e;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+  background-color: #0f4e45;
+}
+
+/* === Dark Mode === */
+body.dark-mode {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+body.dark-mode .container {
+  background-color: #1e1e1e;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode input,
+body.dark-mode select {
+  background-color: #2a2a2a;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+body.dark-mode button {
+  background-color: #21867a;
+  color: white;
+}
+
+body.dark-mode button:hover {
+  background-color: #17695e;
+}
+
+body.dark-mode thead {
+  background-color: #17695e;
+}
+
+body.dark-mode table {
+  background-color: #222;
+  color: #f1f1f1;
+}
+
+body.dark-mode th,
+body.dark-mode td {
+  border-color: #444;
+}
+
+body.dark-mode footer,
+body.dark-mode .site-header {
+  background-color: #17695e;
+}
+
+body.dark-mode .dark-mode-toggle {
+  background-color: #21867a;
+}

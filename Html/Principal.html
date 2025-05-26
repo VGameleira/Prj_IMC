@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora de IMC</title>
+  <link rel="stylesheet" href="/CSS/Principal.css" />
+  <script src="/JS/darkMode.js"></script>
+  <script src="/JS/animacao.js"></script>
+  <script src="/JS/imcAdulto.js"></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <h1><a href="Principal.html" style="text-decoration: none;">Calculadora IMC</a></h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="Infantil.html">IMC Infantil</a></li>
+        <li><a href="Tabelas.html">Tabelas IMC</a></li>
+        <li><a href="calculadora-iac.html">Calculadora IAC</a></li>
+        <li><a href="Duvidas.html">Dúvidas sobre IMC</a></li>
+      </ul>
+    </nav>
+
+
+  </header>
+
+
+
+  <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema">
+    <span id="icon">🌙</span>
+  </button>
+
+
+  <main>
+    <section class="calculadora">
+      <h2>Calcule seu IMC</h2>
+      <form onsubmit="event.preventDefault(); calcularIMC();">
+        <label for="peso">Peso (kg):</label>
+        <input type="number" id="peso" step="0.1" required />
+
+        <label for="altura">Altura (m):</label>
+        <input type="number" id="altura" step="0.01" required />
+
+        <button type="submit">Calcular</button>
+      </form>
+      <div id="resultadoIMC"></div>
+    </section>
+
+    <section class="info">
+      <h2>O que é IMC?</h2>
+      <p>IMC significa Índice de Massa Corporal e é uma medida usada para avaliar se uma pessoa está com o peso adequado
+        em relação à sua altura. É calculado dividindo o peso (em kg) pela altura ao quadrado (em metros).</p>
+    </section>
+
+    <section class="tabela">
+
+      <div>
+        <img src="/Imagens/imc-adulto.jpg" alt="">
+      </div>
+
+      <h2>Tabela de Classificação de IMC</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>IMC (kg/m²)</th>
+            <th>Classificação</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Menor que 16</td>
+            <td>Magreza grau III</td>
+          </tr>
+          <tr>
+            <td>16 a 16,9</td>
+            <td>Magreza grau II</td>
+          </tr>
+          <tr>
+            <td>17 a 18,4</td>
+            <td>Magreza grau I</td>
+          </tr>
+          <tr>
+            <td>18,5 a 24,9</td>
+            <td>Eutrofia (peso adequado)</td>
+          </tr>
+          <tr>
+            <td>25 a 29,9</td>
+            <td>Pré-obesidade</td>
+          </tr>
+          <tr>
+            <td>30 a 34,9</td>
+            <td>Obesidade moderada (grau I)</td>
+          </tr>
+          <tr>
+            <td>35 a 39,9</td>
+            <td>Obesidade severa (grau II)</td>
+          </tr>
+          <tr>
+            <td>40 ou mais</td>
+            <td>Obesidade muito severa (grau III)</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+
+    <section class="dicas" id="dicasSaude" style="display: none;">
+      <h2>Dicas de Saúde</h2>
+      <p id="mensagemSaude"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 - Seu Nome. Todos os direitos reservados.</p>
+  </footer>
+</body>
+
+</html>
