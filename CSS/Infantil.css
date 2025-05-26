@@ -1,4 +1,32 @@
-/* === Reset básico === */
+/* ========================
+   Reset e Variáveis Globais
+=========================== */
+:root {
+  --color-bg-light: #f1f8f6;
+  --color-text-light: #333;
+  --color-header-light: linear-gradient(to right, #7dbd7d, #a0d3a0);
+  --color-link-light: #58a858;
+  --color-link-hover-light: #4d944d;
+  --color-table-head-light: #0077cc;
+  --color-dica-bg: #fff9db;
+  --color-dica-border: #ffc107;
+  --color-footer: #58a858;
+
+  --color-bg-dark: #121212;
+  --color-text-dark: #e0e0e0;
+  --color-header-dark: linear-gradient(to right, #1a3e3e, #2b4c4c);
+  --color-link-dark: #4b8a8a;
+  --color-link-hover-dark: #3e6c6c;
+  --color-main-dark: #1c1c1c;
+  --color-table-head-dark: #2b7a78;
+  --color-footer-dark: #1a3e3e;
+  --color-input-dark: #333;
+  --color-border-dark: #555;
+  --color-dica-bg-dark: #2d2d1f;
+  --color-dica-border-dark: #d1aa00;
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -8,9 +36,10 @@
 /* === Base === */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #e0f7f4;
-  color: #333;
-  line-height: 1.6;
+  background-color: var(--color-bg-light);
+  color: var(--color-text-light);
+  transition: background-color 0.4s, color 0.4s;
+  min-height: 100vh;
 }
 
 /* === Cabeçalho === */
@@ -113,71 +142,71 @@ button:hover {
 }
 
 /* === Tabelas === */
-.tabelas h3 {
-  margin-top: 2rem;
-  color: #2a9d8f;
-  border-bottom: 2px solid #2a9d8f;
-  padding-bottom: 0.4rem;
-  font-size: 1.5rem;
-}
-
-.imagem-tabela {
+.tabela img {
   max-width: 100%;
   height: auto;
   display: block;
-  margin: 1rem auto;
+  margin: 0 auto 1rem auto;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-table {
+.tabela div {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.tabela table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 1rem;
-  background-color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
-thead {
-  background-color: #2a9d8f;
-  color: white;
-}
-
-th,
-td {
-  border: 1px solid #ccc;
+.tabela th,
+.tabela td {
+  border: 1px solid #ddd;
   padding: 0.8rem;
   text-align: center;
 }
 
+.tabela thead {
+  background-color: var(--color-table-head-light);
+  color: white;
+}
+
 /* === Rodapé === */
 footer {
+  background: var(--color-footer);
+  color: white;
   text-align: center;
   padding: 1rem;
-  background-color: #2a9d8f;
-  color: white;
   margin-top: 2rem;
   font-size: 0.9rem;
-  border-top: 1px solid #21867a;
+  border-top: 3px solid var(--color-footer);
 }
 
 
 /* === Botão de Modo Escuro === */
-.dark-mode-toggle {
-  position: absolute;
+.theme-toggle {
+  position: fixed;
   top: 1rem;
   right: 1rem;
-  background-color: #17695e;
+  z-index: 1100;
+  background-color: var(--color-link-light);
   color: white;
   border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
+  border-radius: 50%;
+  padding: 0.75rem;
+  font-size: 1.2rem;
   cursor: pointer;
-  font-size: 0.9rem;
-  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.dark-mode-toggle:hover {
-  background-color: #0f4e45;
+.theme-toggle:hover {
+  background-color: var(--color-link-hover-light);
+  transform: scale(1.1);
 }
 
 /* === Dark Mode === */
@@ -189,6 +218,7 @@ body.dark-mode {
 body.dark-mode .container {
   background-color: #1e1e1e;
   box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+  
 }
 
 body.dark-mode input,
@@ -196,6 +226,14 @@ body.dark-mode select {
   background-color: #2a2a2a;
   color: #fff;
   border: 1px solid #555;
+}
+
+body.dark-mode #dicasSaudeInfantil{
+ color: black; 
+}
+
+body.dark-mode #resultadoIMCInfantil {
+  color: white;
 }
 
 body.dark-mode button {

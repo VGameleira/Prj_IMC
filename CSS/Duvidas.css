@@ -1,93 +1,171 @@
+/* ========================
+   Reset e Variáveis Globais
+=========================== */
+:root {
+  --color-bg-light: #f1f8f6;
+  --color-text-light: #333;
+  --color-header-light: linear-gradient(to right, #7dbd7d, #a0d3a0);
+  --color-link-light: #58a858;
+  --color-link-hover-light: #4d944d;
+  --color-table-head-light: #0077cc;
+  --color-dica-bg: #fff9db;
+  --color-dica-border: #ffc107;
+  --color-footer: #58a858;
+
+  --color-bg-dark: #121212;
+  --color-text-dark: #e0e0e0;
+  --color-header-dark: linear-gradient(to right, #1a3e3e, #2b4c4c);
+  --color-link-dark: #4b8a8a;
+  --color-link-hover-dark: #3e6c6c;
+  --color-main-dark: #1c1c1c;
+  --color-table-head-dark: #2b7a78;
+  --color-footer-dark: #1a3e3e;
+  --color-input-dark: #333;
+  --color-border-dark: #555;
+  --color-dica-bg-dark: #2d2d1f;
+  --color-dica-border-dark: #d1aa00;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--color-bg-light);
+  color: var(--color-text-light);
+  transition: background-color 0.4s, color 0.4s;
+  min-height: 100vh;
+}
 
 /* Header */
 
 .site-header {
-  background-color: #0077cc;
+  background-color: #2a9d8f;
   color: white;
-  padding: 1rem 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 1.5rem;
   text-align: center;
 }
 
-.site-header h1 {
-  margin: 0;
+.site-header h1 a {
+  color: white;
+  text-decoration: none;
   font-size: 2rem;
 }
 
+/* === Navegação === */
 .nav-links {
-  list-style: none;
-  padding: 0;
-  margin-top: 0.5rem;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 1rem;
+  list-style: none;
+  margin-top: 1rem;
 }
 
 .nav-links li a {
-  text-decoration: none;
+  background-color: #21867a;
   color: white;
-  font-weight: bold;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
   transition: background-color 0.3s ease;
 }
 
 .nav-links li a:hover {
-  background-color: #005fa3;
+  background-color: #17695e;
 }
-
 
 
 
 /* Header */
 
-body {
+/* body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   background: #f4f4f4;
   color: #333;
+} */
+/* Responsivo */
+@media (max-width: 1024px) {
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .nav-links li a {
+    font-size: 1.1rem;
+  }
 }
 
-header {
-  background-color: #0077cc;
-  color: white;
-  padding: 1rem;
-  text-align: center;
+@media (max-width: 768px) {
+  .nav-links li a {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+  }
 }
-
-.container {
+/* ========================
+   Conteúdo Principal
+=========================== */
+main {
   max-width: 900px;
-  margin: auto;
+  margin: 2rem auto;
   padding: 2rem;
   background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.7s ease;
 }
 
-section {
-  margin-bottom: 2rem;
-}
-
-h2 {
-  color: #0077cc;
-  margin-top: 1.5rem;
-}
-
-h3 {
-  color: #005a99;
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
   margin-top: 1rem;
 }
 
+form label {
+  font-weight: bold;
+}
+
+form input {
+  width: auto;
+  padding: 0.5rem;
+}
+
+form button {
+  padding: 0.5rem 1.2rem;
+}
+
+p {
+  font-size: 20px;
+}
+pre{
+  font-size: 20px;
+  color: blue;
+}
+/* ========================
+   Tabela
+=========================== */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 0.5rem;
+  margin-top: 1rem;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 table, th, td {
-  border: 1px solid #ccc;
+    border: 1px solid #ddd;
+  padding: 0.8rem;
+  text-align: center;
 }
 
 th, td {
@@ -100,10 +178,86 @@ ul {
   margin-left: 2rem;
 }
 
+/* ========================
+   Rodapé
+=========================== */
 footer {
-  text-align: center;
-  background: #0077cc;
+  background: var(--color-footer);
   color: white;
+  text-align: center;
   padding: 1rem;
   margin-top: 2rem;
+  font-size: 0.9rem;
+  border-top: 3px solid var(--color-footer);
+}
+
+/* ========================
+   Modo Escuro
+=========================== */
+body.dark-mode {
+  background: var(--color-bg-dark);
+  color: var(--color-text-dark);
+}
+
+body.dark-mode .site-header {
+  background: var(--color-header-dark);
+}
+
+body.dark-mode .nav-links li a {
+  background: var(--color-link-dark);
+}
+
+body.dark-mode .nav-links li a:hover {
+  background-color: var(--color-link-hover-dark);
+}
+
+body.dark-mode main {
+  background: var(--color-main-dark);
+}
+
+body.dark-mode form {
+  background: transparent;
+  
+}
+
+body.dark-mode input,
+body.dark-mode button {
+  background: var(--color-input-dark);
+  color: white;
+  border: 1px solid var(--color-border-dark);
+}
+
+body.dark-mode .tabela th {
+  background-color: var(--color-table-head-dark);
+}
+
+body.dark-mode .tabela td,
+body.dark-mode .tabela {
+  background-color: var(--color-main-dark);
+  border-color: var(--color-input-dark);
+}
+
+body.dark-mode footer {
+  background: var(--color-footer-dark);
+}
+
+body.dark-mode .dicas {
+  background: var(--color-dica-bg-dark);
+  border-left-color: var(--color-dica-border-dark);
+}
+
+#resultadoIMC {
+  background-color: #e9f5ec;
+  color: #333;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-top: 1rem;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+body.dark-mode #resultadoIMC {
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+  border: 1px solid #444;
 }

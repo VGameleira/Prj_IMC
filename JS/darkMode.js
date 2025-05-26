@@ -5,7 +5,6 @@ function toggleDarkMode() {
   localStorage.setItem("darkMode", document.body.classList.contains("dark-mode"));
 }
 
-// Ativa o modo escuro automaticamente se salvo
 window.addEventListener("DOMContentLoaded", () => {
   const darkModeAtivado = localStorage.getItem("darkMode") === "true";
   if (darkModeAtivado) {
@@ -29,4 +28,34 @@ document.addEventListener("DOMContentLoaded", () => {
     icon.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
   });
 });
+
+// Dark mode Infantil.html
+document.addEventListener('DOMContentLoaded', function () {
+
+  const toggleBtn = document.getElementById('modoDark');
+
+  const body = document.body;
+
+
+
+  // Aplica o modo salvo no localStorage
+
+  if (localStorage.getItem('modoEscuro') === 'true') {
+
+    body.classList.add('dark-mode');
+
+  }
+
+
+
+  toggleBtn.addEventListener('click', () => {
+
+    body.classList.toggle('dark-mode');
+
+    localStorage.setItem('modoEscuro', body.classList.contains('dark-mode'));
+
+  });
+
+});
+
 
