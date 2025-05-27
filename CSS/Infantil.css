@@ -229,12 +229,14 @@ body.dark-mode select {
 }
 
 body.dark-mode #dicasSaudeInfantil{
- color: black; 
+ color: rgb(0, 0, 0); 
 }
 
-body.dark-mode #resultadoIMCInfantil {
-  color: white;
+body.dark-mode .resultadoIMCInfantil {
+  color: rgb(240, 0, 0);
+  
 }
+
 
 body.dark-mode button {
   background-color: #21867a;
